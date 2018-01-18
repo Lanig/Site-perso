@@ -1,0 +1,17 @@
+@media screen and (max-width: 992px) {
+
+	header {
+
+		ul li {
+			display: inline-block;
+			margin: 0;
+			padding: 0 1em;
+		}
+	}
+
+	#content {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+}

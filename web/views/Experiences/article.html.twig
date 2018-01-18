@@ -1,0 +1,37 @@
+{% extends "Template/base.html.twig" %}
+
+{% block title %}
+	{{article.title}}
+{% endblock %}
+{% block description %}
+	{{article.description}}
+{% endblock %}
+
+
+{% block content %}
+	<h1 class="h1-page">{{article.titre}}</h1>
+	<div class="row">
+		<section class="col s3 nav-left">
+			{% include 'Experiences/menu_js.html.twig' %}
+		</section>
+		<section class="col s9 page-main" role="main">
+			<article>
+				{% if article.content is not empty %}
+					{{article.content|raw}}
+				{% else %}
+					<i>Article en cours de rédaction ...</i>
+				{% endif %}
+			</article>
+		</section>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	<script>
+		$(document).ready(function(){
+			var article = function(){
+
+			}
+		});
+	</script>
+{% endblock %}

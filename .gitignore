@@ -1,0 +1,9 @@
+
+.htaccess
+old
+var
+vendor
+composer.lock
+web/assets/files
+web/assets/imgs
+web/assets/fonts

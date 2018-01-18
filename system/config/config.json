@@ -1,0 +1,17 @@
+{
+	"site": {
+		"base_title":  "Lanig Simon",
+		"author":      "Lanig Simon <mail@lanig-simon.fr>",
+		"mail":        "mail@lanig-simon.fr"
+	},
+	"database": {
+		"host":  "localhost",
+		"database":  "site_perso",
+		"user":  "root",
+		"password":  ""
+	},
+	"routing_file":       "routing.json",
+	"base_dir":           "Lanig/",
+	"css_file":           "styles.css",
+	"debug":              true
+}

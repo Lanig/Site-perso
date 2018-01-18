@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'heartbeat_in_christmasregular';
+    src: url('../fonts/heartbeat/heartbeat_in_christmas.woff2') format('woff2'),
+         url('../fonts/heartbeat/heartbeat_in_christmas.woff') format('woff'),
+         url('../fonts/heartbeat/heartbeat_in_christmas.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'flamingregular';
+    src: url('../fonts/flaming/flaming.woff2') format('woff2'),
+         url('../fonts/flaming/flaming.woff') format('woff'),
+         url('../fonts/flaming/flaming.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'summer_fever';
+    src: url('../fonts/summer_fever/summer_fever.woff2') format('woff2'),
+         url('../fonts/summer_fever/summer_fever.woff') format('woff'),
+         url('../fonts/summer_fever/summer_fever.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+@import url('https://fonts.googleapis.com/css?family=Itim');
+@import url('https://fonts.googleapis.com/css?family=Mukta+Malar|Overlock|Reenie+Beanie|Scada');
+
+
+html {
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	background-color: #282828;
+
+	-webkit-perspective: 1px;
+	font-family: "Roboto", sans-serif;
+	perspective: 1px;
+}
+
+header {
+	background-color: #232323;
+	color: antiquewhite;
+	text-align: center;
+	box-shadow: 0 0 5px rgba(50,50,50,.2);
+
+	a {
+		color: inherit;
+	}
+
+	#titre {
+		display: inline-block;
+		font-family: 'heartbeat_in_christmasregular', 'flamingregular', sans-serif;
+		font-weight: 100;
+		line-height: 1em;
+		font-size: 100px;
+		margin: 0;
+	}
+}
+
+h1 {
+	font-size: 3em !important;
+	font-weight: 100 !important;
+	border-left: 4px solid #222;
+	padding: 0 0.7em;
+	overflow: visible;
+	line-height: 1.5 !important;
+}
+
+.h1-page {
+	margin-bottom: calc(-40px + 10vh);
+}
+
+h2 {
+	color: #90a4ae;
+	margin-top: 1rem !important;
+	font-size: 2.5em !important;
+	font-weight: 100 !important;
+}
+
+h3 {
+	color: #90a4ae;
+	font-size: 1.6em !important;
+	margin-bottom: 0 !important;
+	font-weight: 100 !important;
+	font-style: italic;
+}
+
+h3 + p {
+	margin-top: 0.7em;
+}
+
+h4 {
+	color: #a4b9c3;
+	margin-top: 1.6rem !important;
+	font-size: 1.5em !important;
+	font-weight: 100 !important;
+}
+
+p {
+	text-align: justify;
+}
+
+.big {
+	font-size: 15em;
+	font-family: 'Spectral SC', serif;
+}
+
+#menu {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	margin: 0 2em;
+	li {
+		display: inline-block;
+		line-height: 100px;
+		margin: 0 1em;
+	}
+}
+
+#content {
+	color: #f5f5f5;
+	// height: 85vh;
+	// overflow: hidden;
+	padding-top: 2em;
+}
+
+@keyframes zoomanim {
+	from {
+		transform: scale(0.8);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+#competences {
+
+	position: relative;
+	top: calc(-300px + 25vh);
+
+	.bloc-gauche, .bloc-droite {
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	.bloc-gauche {
+		font-size: 1.5em;
+		font-weight: 300;
+
+		p {
+			display: inline-block;
+			height: 100%;
+			margin: 0;
+			vertical-align: middle;
+
+			.bold {
+				font-weight: 400;
+			}
+		}
+	}
+
+	.bloc-droite li {
+		padding: 0.5em;
+		cursor: pointer;
+
+		a {
+			font-size: 1.8em;
+			color: #7cb342;
+			font-weight: 300;
+			font-family: "Roboto", sans-serif;
+			margin: 2em 0;
+		}
+
+		a.inactive {
+			color: grey;
+			cursor: default !important;
+		}
+	}
+
+	#illustrations {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		left: -5px;
+
+		.illustration.active, .illustration:hover {
+			display: block;
+			// * {
+				animation: zoomanim .3s;
+			// }
+		}
+
+		.illustration {
+			height: 250px;
+			width: 300px;
+			position: relative;
+			display: none;
+			margin: 0;
+			padding: 1em;
+
+			a {
+				position: absolute;
+
+				img {
+					width: inherit;
+					height: inherit;
+					transition: all .5s;
+				}
+			}
+
+			a:hover img
+			{
+				transform: scale(1.1);
+			}
+		}
+
+		#ill-competences {
+			$ill-width: 25px 50px 48px 55px 65px;
+			$ill-x: 60px 34px 80px 173px 100px;
+			$ill-y: 50px 106px 150px 125px 70px;
+			@for $i from 1 through length($ill-width) {
+			    a:nth-child(#{$i}) {
+			        width: nth($ill-width, $i);
+			        left: nth($ill-x, $i);
+			        top: nth($ill-y, $i);
+			    }
+			}
+		}
+
+		#ill-experiences svg {
+			vertical-align: middle;
+			width: 250px;
+			a {
+				cursor: pointer;
+				fill: #fff;
+				font-family: "flamingregular", sans-serif;
+				transition: fill .4s;
+			}
+
+			a:hover {
+				fill: #1575c1;
+				transition: fill 0s;
+			}
+		}
+
+		#ill-portfolio {
+			$ill-width: 100px 97px 120px;
+			$ill-x: 20px 144px 68px;
+			$ill-y: 121px 113px 50px;
+			@for $i from 1 through length($ill-width) {
+			    a:nth-child(#{$i}) {
+			        width: nth($ill-width, $i);
+			        left: nth($ill-x, $i);
+			        top: nth($ill-y, $i);
+			        z-index: #{$i};
+			    }
+			}
+		}
+
+
+	}
+}
+
+//////////////////
+.menu-horizontal {
+	a {
+		display: block;
+		transition: all .3s;
+		color: #555;
+		padding: 7px 1em;
+		cursor: pointer;
+		font-size: 1.1em;
+	}
+
+	a.active {
+		background-color: rgba(50,50,50,.3);
+		color: #ddd;
+	}
+
+	a:hover {
+		background-color: rgba(50,50,50,.6);
+		color: #ddd;
+	}
+
+	a.active:hover {
+		background-color: rgba(50,50,50,.7);
+		color: #476c7d;
+	}
+}
+
+.page-main {
+	padding-left: 2em !important;
+}

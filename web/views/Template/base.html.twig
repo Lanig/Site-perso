@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <title>{% block title %}{% endblock %} {{config.site.base_title}}</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="author" content="{{config.site.author}}">
+            <meta name="contact" content="{{config.site.mail}}">
+            <meta name="description" content="{% block description %}Site professionnel Lanig Simon, développement de sites et applications Web dynamiques et attractifs. Demande de projet, devis et accompagnement. Emploi développeur Web back-end Symfony Angular Rennes Brest{% endblock %}">
+            <meta name="keywords" content="{% block keywords %}website,site professionnel,web developer,developpeur web,developpeur back-end,back-end web developer,career,emploi,services,mon site web, symfony, php, angular, bretagne, brest, rennes, nantes, bordeaux, développeur rennes php,développeur full-stack bretagne{% endblock %}">
+            <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109838396-1"></script>-->
+            <script>
+              // window.dataLayer = window.dataLayer || [];
+              // function gtag(){dataLayer.push(arguments);}
+              // gtag('js', new Date());
+
+              // gtag('config', 'UA-109838396-1');
+            </script>
+        {% endblock %}
+        {% block stylesheets %}
+        	{{css(['styles.scss','styles1200.scss','styles992.scss','styles768.scss','styles576.scss','font-awesome.min.css', 'materialize.min.css'])}}
+        {% endblock %}
+    </head>
+    <body>
+        <header id="header">
+            {% block header %}
+                <p id="titre" role="banner"><a href="{{ url('Index:index') }}">Lanig Simon</a></p>
+                <ul id="menu">
+                    <li><a href="{{ url('Index:index') }}">Accueil</a></li>
+                    <li><a href="{{ asset('CV_Lanig_Simon_developpeur_web.pdf') }}">CV</a></li>
+                    <li><a href="{{ url('Index:Contact') }}">Contact</a></li>
+                </ul>
+            {% endblock %}
+        </header>
+        <section id="content" class="container">
+            {% block content %}{% endblock %}
+        </section>
+        <footer id="footer">
+            {% block footer %}
+            {% endblock %}
+        </footer>
+
+        {% block javascript %}
+            <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous"></script>
+            {#<script src="{{asset('jquery.waypoints.min.js')}}"></script>#}
+            <script src="{{asset('materialize.min.js')}}"></script>
+            <script src="{{asset('app.js')}}"></script>
+        {% endblock %}
+    </body>
+</html>
